@@ -14,6 +14,7 @@ header{
     position:fixed;
     width:9em;
     height:3em;
+    text-align:right;
 }
 h4 {
   text-align:center;
@@ -25,6 +26,6 @@ h4 {
   border-bottom:double 3px black;
 }
 ul {
-  margin-left:10em;
+  margin-left:20em;
 }
 
