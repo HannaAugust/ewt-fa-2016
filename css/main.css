@@ -14,10 +14,10 @@ header{
     position:fixed;
     width:9em;
     height:3em;
-    text-align:right;
+   
 }
 h4 {
-  text-align:center;
+  text-align:right;
   margin-top:0.5em;
   width:9em;
   text-transform: uppercase;
@@ -26,6 +26,6 @@ h4 {
   border-bottom:double 3px black;
 }
 ul {
-  margin-left:20em;
+  margin-left:25em;
 }
 
