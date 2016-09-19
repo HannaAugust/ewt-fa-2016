@@ -2,3 +2,25 @@
 	font-family: helvetica;
 	color: #000;
 }
+body{
+    height: 7000px;
+    background: linear-gradient(
+    to bottom,
+    rgb(255, 153, 0),
+    rgb(204, 204, 0)
+  );
+}
+header{
+    position:fixed;
+    width:9em;
+    height:3em;
+}
+h4 {
+  text-align:center;
+  margin-top:0.5em;
+  width:9em;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  font-weight: 200;
+  border-bottom:double 3px black;
+}
