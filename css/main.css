@@ -11,6 +11,8 @@ body{
   );
 }
 header{
+	margin-top:0;
+	margin-left:0;
     position:fixed;
     width:20em;
     height:10em;
@@ -31,7 +33,7 @@ h4 {
 h2 {
   text-align:center;
   margin-top:0.5em;
-  width:13.4em;
+  width:13.3em;
   
   text-transform: uppercase;
   letter-spacing: 1em;
