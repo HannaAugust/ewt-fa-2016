@@ -18,6 +18,7 @@ header{
 }
 h4 {
   text-align:right;
+  margin-top:-0.5em;
   margin-bottom:0.5em;
   width:20em;
   text-transform: uppercase;
@@ -28,7 +29,7 @@ h4 {
 h2 {
   text-align:right;
   margin-top:0.5em;
-  width:10em;
+  width:15em;
   text-transform: uppercase;
   letter-spacing: 1em;
   font-weight: 200;
