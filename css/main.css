@@ -58,10 +58,10 @@ ul.exercise {
 	position:absolute;
 left:320;
 top:180;
-
-}
-div #divv{
 background-color:rgba(225,255,200,0.4);
 width:100%;
-height:100%;	
+height:100%;
+}
+div #divv{
+	
 }
