@@ -55,7 +55,7 @@ ul.exercise {
   margin-left:3em;
 }
 #divv{
-	position:fixed;
-left:30em;
+	position:absolute;
+left:30;
 }
 
