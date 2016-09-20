@@ -18,7 +18,8 @@ header{
 }
 h4 {
   text-align:center;
-  margin-top:-0.2em;
+  margin-top:-0.6em;
+  padding-top:0.1em;
   margin-bottom:0.5em;
   width:20em;
   text-transform: uppercase;
@@ -29,7 +30,7 @@ h4 {
 h2 {
   text-align:center;
   margin-top:0.5em;
-  width:12em;
+  width:13em;
   
   text-transform: uppercase;
   letter-spacing: 1em;
