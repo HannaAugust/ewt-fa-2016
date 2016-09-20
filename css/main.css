@@ -47,7 +47,7 @@ h2 {
 
 
 ul.list {
-position:absolut;
+
   margin-left:5em;
 
 }
@@ -55,6 +55,7 @@ ul.exercise {
   margin-left:3em;
 }
 #divv{
-margin-left:30em;
+	position:absolut;
+left:30em;
 }
 
