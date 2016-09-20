@@ -46,7 +46,9 @@ h2 {
 }
 
 
-ul {
+ul.main_list {
   margin-left:25em;
 }
-
+ul.exercise {
+  margin-left:3em;
+}
