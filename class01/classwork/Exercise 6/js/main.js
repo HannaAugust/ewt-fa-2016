@@ -9,6 +9,7 @@ function jsonFlickrApi (data) {
 	//var length = data.photos.photo.length;
 
 	data.photos.photo.forEach(function(photo) {
+		document.getElementsByClassName('gallery').appendChild('a');
 		console.log(photo.url_s);
 		console.log(photo.url_l);
       	console.log(photo.title);
