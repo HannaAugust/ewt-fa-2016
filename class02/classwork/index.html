@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width,initial-scale=1">
+		<title>Responsive Images</title>
+
+		<link rel="stylesheet" href="css/base.css">
+
+		<style type="text/css">
+			/* mobile first option */
+			.page-heading {
+				text-align: center;
+				font-size: 18px;
+			}
+
+			.frisbee {
+				color: #fff;
+				font-size: 20px;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+				padding-top: 20px;
+				margin: 0 auto;
+				background-image: url('images/frisbee-mobile.jpg');
+				width: 280px;
+				height: 280px;
+				transition: all 0.3s ease;
+			}
+
+			/* high res mobile */
+			@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+				.frisbee{
+					color: #fff;
+				font-size: 20px;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+				padding-top: 20px;
+				margin: 0 auto;
+				background-image: url('images/frisbee-mobile@2x.jpg');
+				background-size: 280px,280px;
+				width: 280px;
+				height: 280px;
+				transition: all 0.3s ease;
+			}
+		}
+
+			/* tablet */
+@media (min-width: 768px)  {
+
+ 				.frisbee{
+					color: #fff;
+				font-size: 30px;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+				padding-top: 20px;
+				margin: 0 auto;
+				background-image: url('images/frisbee-tablet.jpg');
+				background-size: 580px,580px;
+				width: 580px;
+				height: 580px;
+				transition: all 0.3s ease;
+			}
+}
+
+			/* high res tablet */
+@media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2),
+		(min-width: 768px) and (min-resolution: 192dpi) {
+				.frisbee{
+					color: #fff;
+				font-size: 30px;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+				padding-top: 20px;
+				margin: 0 auto;
+				background-image: url('images/frisbee-tablet@2x.jpg');
+				background-size: 580px,580px;
+				width: 580px;
+				height: 580px;
+				transition: all 0.3s ease;
+			}
+		}
+
+			/* desktop */
+
+@media  (min-width: 1024px) {
+
+			.frisbee{
+					color: #fff;
+				font-size: 30px;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+				padding-top: 40px;
+				margin: 0 auto;
+				background-image: url('images/frisbee-desktop.jpg');
+				background-size: 780px,780px;
+				width: 780px;
+				height: 780px;
+				transition: all 0.3s ease;
+			}
+}
+			/* high res desktop */
+			@media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2),
+		(min-width: 1024px) and (min-resolution: 192dpi) {
+				.frisbee{
+					color: #fff;
+				font-size: 30px;
+				text-align: center;
+				text-transform: uppercase;
+				font-weight: bold;
+				text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+				padding-top: 50px;
+				margin: 0 auto;
+				background-image: url('images/frisbee-desktop@2x.jpg');
+				background-size: 780px,780px;
+				width: 780px;
+				height: 780px;
+				transition: all 0.3s ease;
+			}
+		}
+
+		</style>
+	</head>
+	<body>
+		<main class="wrapper" role="main">
+			<h1 class="page-heading">CSS Background Images Demo</h1>
+			<hr>
+			<div class="frisbee">
+				Novelty flying disk!
+			</div>
+		</main>
+	</body>
+</html>
