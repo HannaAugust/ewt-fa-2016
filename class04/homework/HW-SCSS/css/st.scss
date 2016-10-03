@@ -1,0 +1,143 @@
+/*//imported*/
+@import 'colors';
+@import 'media';
+
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-size: 16px;
+}
+
+.wrapper {
+    @include mainback;
+    font-family:$font;
+    &:after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+.container {
+    padding: 20px 0;
+}
+
+.suit-image {
+    @include transition;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+.suit-name {
+    text-transform: uppercase;
+    font-size: 1.6rem;
+    text-align: center;
+    color: $namecolor;
+    letter-spacing: 0.15rem;
+    transition: color 0.2s ease;
+    text-shadow: $cardv;
+    &:before,
+    &:after {
+        content: '⭐️';
+        font-size: 0.8rem;
+        padding: 0 2px;
+        text-shadow: none;
+        opacity: 0;
+        @include transition;
+    }
+}
+.card {
+    position: relative;
+    display: block;
+    margin: 0 auto 20px;
+    width: 260px;
+    height: 364px;
+    padding: 20px;
+    border-radius: 10px;
+    background: $backcard;
+    @include transition;
+    box-shadow: $boxs;
+    &:hover {
+        -ms-transform: rotate(5deg);
+        -webkit-transform: rotate(5deg);
+        transform: rotate(5deg);
+        box-shadow: 3px 3px 16px rgba(0, 0, 0, 0.8), inset 0 0 6px $box-shadow;
+    }
+    &:hover .suit-image {
+        -ms-transform: rotate(-5deg);
+        -webkit-transform: rotate(-5deg);
+        transform: rotate(-5deg);
+    }
+    &:hover .suit-name {
+        color: $cardnamecolor;
+        &:before,
+        &:after {
+            opacity: 1;
+            font-size: 1rem;
+            padding: 0 6px;
+        }
+    }
+}
+
+
+.card-value-top {
+    color: $cardvalue;
+    font-size: 1.4rem;
+    text-shadow: $texts;
+    margin-bottom: 30px;
+}
+
+.card-value-bottom {
+    color: $cardvalue;
+    font-size: 1.4rem;
+    text-shadow: $texts;
+    -ms-transform: $rotation;
+    -webkit-transform: $rotation;
+    transform: $rotation;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+}
+
+@media (min-width: $breakTablet) {
+    .wrapper {
+        @include tabletback;
+    }
+
+    .container {
+        width: $breakTablet;
+        margin: 0 auto;
+    }
+
+    .cards {
+        width: 600px;
+        margin: 20px auto 0;
+    }
+
+    .card {
+        float: left;
+        margin: 0 20px 40px;
+    }
+}
+
+@media (min-width: $breakDesktop) {
+    .wrapper {
+        @include deskback;
+    }
+
+    .container {
+        width: $breakDesktop;
+        
+    }
+
+    .cards {
+        width: 900px;
+    }
+}

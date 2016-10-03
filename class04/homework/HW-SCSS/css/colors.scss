@@ -1,0 +1,35 @@
+/*main colors for back*/
+$back1:#777;
+$back2:#444;
+/*tablet color for back*/
+$back3:#6bc8f3;
+$back4:#0e81b7;
+/*desctop color for back*/
+$back5:#a56f8e;
+$back6:#4c2f40;
+
+$namecolor:#FF7878;
+$backcard:#fff;
+$cardnamecolor:#12A3E6;
+
+@mixin mainback(){
+    background: -webkit-linear-gradient(top, $back1 0%, $back2 100%);
+    background: linear-gradient(to bottom, $back1 0%, $back2 100%);   
+}
+@mixin tabletback(){
+        background: -webkit-linear-gradient(top, $back3 0%, $back4 100%);
+        background: linear-gradient(to bottom, $back3 0%, $back4 100%);    
+}
+@mixin deskback(){
+        background: -webkit-linear-gradient(top, $back5 0%, $back6 100%);
+        background: linear-gradient(to bottom, $back5 0%, $back6 100%);    
+}
+
+$cardvalue: #6B435A;
+$cardv:2px 0 0 $cardvalue, -2px 0 0 $cardvalue, 0 2px 0 $cardvalue, 0 -2px 0 $cardvalue;
+
+$text-shadow:#FF7878;
+$texts: 1px 0 0 $text-shadow, -1px 0 0 $text-shadow, 0 1px 0 $text-shadow, 0 -1px 0 $text-shadow;
+
+$box-shadow:#12A3E6;
+$boxs: 0 0 10px rgba(0, 0, 0, 0.8), inset 0 0 6px $box-shadow;

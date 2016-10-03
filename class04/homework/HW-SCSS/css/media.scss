@@ -1,0 +1,11 @@
+$breakTablet: 760px;
+$breakDesktop: 1000px;
+
+@mixin transition() {
+  transition: all 0.2s ease;
+}
+
+
+
+$rotation:rotateX(180deg) rotateY(180deg);
+$font: 'Lilita One', sans-serif;
