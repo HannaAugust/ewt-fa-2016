@@ -1,0 +1,23 @@
+$helv: helvetica, sans-serif;
+$breakTablet: 760px;
+$breakDesktop: 1000px;
+$box_s:0 2px 4px rgba(0, 0, 0, 0.6), inset 0 0 20px rgba(0, 0, 0, 0.3);
+
+
+
+@mixin transition() {
+  transition: all 0.25s ease;
+}
+
+%box_shadow {
+	padding: 10px;
+    margin-bottom: 20px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.6), inset 0 0 6px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.25s ease;
+}
+
+%header_footer{
+	background: $back;
+    padding: 20px;
+    text-align: center;
+}
