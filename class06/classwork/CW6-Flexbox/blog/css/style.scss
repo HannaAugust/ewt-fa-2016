@@ -59,7 +59,11 @@ ul, ol {
 
 .nav {
     ul {
+    display:flex;
         border: 1px solid black;
+        li{
+        flex-grow:1;
+        }
     }
 }
 
