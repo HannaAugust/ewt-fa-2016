@@ -7,6 +7,9 @@ html {
 }
 
 .container {
+display:flex;
+flex-direction:column;
+justify-content:center;
     background: url('http://lorempixel.com/1000/600/abstract') top center no-repeat;
     background-size: cover;
     min-height: 100vh;
