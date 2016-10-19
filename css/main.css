@@ -52,7 +52,7 @@ ul.list {
 
 }
 ul.exercise {
-  margin-left:2em;
+ list-style-type:none;
 }
 #divv nav{
 margin-left:320px;
