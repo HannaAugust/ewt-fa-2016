@@ -47,12 +47,12 @@ h1 {
 
 
 ul.list {
-	margin-top:1em;
+	padding-top:1em;
   margin-left:1em;
 
 }
 ul.exercise {
-  margin-left:3em;
+  margin-left:2em;
 }
 #divv nav{
 margin-left:320px;
@@ -61,6 +61,4 @@ background-color:rgba(215,215,215,0.4);
 
 height:100%;
 }
-div #divv{
-	
-}
+
