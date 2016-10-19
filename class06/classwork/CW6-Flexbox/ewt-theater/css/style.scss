@@ -148,13 +148,19 @@ a {
     }
 
     .feature {
-        float: left;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
         width: 50%;
 
         /* make every other .feature clears the previous 2 floated .features */
         &:nth-child(2n+1) {
-            clear: left;
+            display:flex;
         }
+    }
+    .feature-list{
+    display:flex;
+    flex-wrap:wrap;
     }
 
     /*
