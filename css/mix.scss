@@ -1,0 +1,31 @@
+$doubleborder:double 3px black;
+
+@mixin transition1() {
+  transition: all 0.5s linear;
+}
+@mixin transition2() {
+  transition: all 1s linear;
+}
+
+@mixin flexwrap() {
+  display: flex;         
+  display: -webkit-box;  
+  display: -ms-flexbox;  
+  display: -webkit-flex; 
+  flex-wrap:wrap;
+}
+
+@mixin square(){
+    width:15em;
+    height:15em;
+} 
+
+@mixin juststart(){
+  justify-content:flex-start;
+  -webkit-justify-content:flex-start;
+} 
+
+@mixin justcenter(){
+  -webkit-justify-content: center;
+  justify-content: center;
+}
