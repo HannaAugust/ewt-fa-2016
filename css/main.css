@@ -55,6 +55,7 @@ nav {
   display: -webkit-flex;
   flex-wrap: wrap;
   height: 100vh;
+  width: 60vh;
   justify-content: flex-start;
   -webkit-justify-content: flex-start;
   -webkit-flex-direction: row;
