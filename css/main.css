@@ -1,0 +1,327 @@
+body {
+  margin: 0;
+  height: 150vh;
+  background: linear-gradient(to bottom, #1d6b99, #ecffe0); }
+
+header {
+  font-family: "Ubuntu Mono", monospace;
+  top: 0px;
+  left: 0px;
+  position: fixed;
+  width: 20em;
+  height: 11em;
+  background-color: #a0faff;
+  transition: all 0.5s linear; }
+
+h4 {
+  font-family: "Ubuntu Mono", monospace;
+  padding-left: 5px;
+  text-align: center;
+  margin-top: -0.6em;
+  padding-top: 0.3em;
+  margin-bottom: 0.5em;
+  width: 19.7em;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  line-height: 130%;
+  font-weight: 200;
+  border-top: double 3px black;
+  transition: all 0.5s linear; }
+
+h1 {
+  font-family: "Ubuntu Mono", monospace;
+  text-align: center;
+  margin-top: 0.5em;
+  width: 13.1em;
+  padding-left: 7px;
+  text-transform: uppercase;
+  letter-spacing: 1em;
+  font-size: 150%;
+  font-weight: 200;
+  border-bottom: double 3px black;
+  transition: all 0.5s linear; }
+
+#divv {
+  background-color: rgba(186, 196, 180, 0.6);
+  height: 150vh;
+  margin-left: 320px;
+  margin-top: 175px;
+  transition: all 1s linear; }
+
+nav {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  height: 100vh;
+  justify-content: flex-start;
+  -webkit-justify-content: flex-start;
+  -webkit-flex-direction: row;
+  flex-direction: row; }
+
+ul a {
+  color: #000;
+  text-decoration: none;
+  transition: all 1s linear; }
+  ul a:hover {
+    color: #f54500;
+    transition: all 1s linear;
+    letter-spacing: 1px;
+    font-family: "Arvo", serif;
+    font-weight: 600; }
+ul.list {
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  font-family: "Arvo", serif;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-left: 1em; }
+ul.exercise {
+  font-weight: 200;
+  font-family: "Ubuntu Mono", monospace;
+  display: block;
+  list-style-type: none; }
+  ul.exercise a:hover {
+    font-weight: 200;
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 110%; }
+
+.box {
+  font-family: "Arvo", serif;
+  font-weight: 600;
+  background-color: #ecffe0;
+  padding: 1em;
+  margin: 5px;
+  display: flex;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+  width: 15em;
+  height: 15em;
+  transition: all 1s linear; }
+  .box:hover {
+    font-family: "Arvo", serif;
+    font-weight: 600;
+    background-color: #a0faff;
+    transition: all 1s linear;
+    width: 15em;
+    height: 15em; }
+    .box:hover a {
+      color: #00383f; }
+      .box:hover a:hover {
+        color: #f54500; }
+
+@media (min-width: 320px) {
+  #divv {
+    background-color: rgba(186, 196, 180, 0.6);
+    height: 150vh;
+    margin-left: 0px;
+    margin-top: 150px;
+    padding: 0px;
+    z-index: 99; }
+
+  header {
+    font-family: Helvetica;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100vw;
+    height: 11em;
+    z-index: 1;
+    background-color: #a0faff; }
+
+  h4 {
+    font-family: Helvetica;
+    padding-left: 5px;
+    text-align: center;
+    margin-top: -0.6em;
+    padding-top: 0.3em;
+    margin-bottom: 0.5em;
+    width: 100vw;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    line-height: 130%;
+    font-weight: 200;
+    border-top: double 3px black; }
+
+  h1 {
+    font-family: Helvetica;
+    text-align: center;
+    margin-top: 0.5em;
+    width: 100vw;
+    padding-left: 7px;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    font-size: 150%;
+    font-weight: 200;
+    border-bottom: double 3px black; }
+
+  nav {
+    margin: 0px;
+    padding: 0px;
+    -webkit-justify-content: center;
+    justify-content: center; }
+
+  .box {
+    background-color: #ecffe0;
+    padding: 1em;
+    margin-top: 1px;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    width: 100vw;
+    height: 8em;
+    transition: all 1s linear; }
+    .box:hover {
+      background-color: #a0faff;
+      transition: all 1s linear;
+      font-family: "Arvo", serif;
+      font-weight: 600;
+      width: 100vw;
+      height: 8em; } }
+@media (min-width: 760px) {
+  #divv {
+    background-color: rgba(186, 196, 180, 0.6);
+    height: 150vh;
+    margin-left: 0px;
+    margin-top: 110px;
+    z-index: 99; }
+
+  header {
+    font-family: Helvetica;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 100vw;
+    height: 7em;
+    z-index: 1;
+    background-color: #a0faff; }
+
+  h4 {
+    font-family: Helvetica;
+    padding-left: 5px;
+    text-align: center;
+    margin-top: -0.6em;
+    padding-top: 0.3em;
+    margin-bottom: 0.5em;
+    width: 100vw;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    line-height: 130%;
+    font-weight: 200;
+    border-top: double 3px black; }
+
+  h1 {
+    font-family: Helvetica;
+    text-align: center;
+    margin-top: 0.5em;
+    width: 100vw;
+    padding-left: 7px;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    font-size: 150%;
+    font-weight: 200;
+    border-bottom: double 3px black; }
+
+  nav {
+    -webkit-justify-content: center;
+    justify-content: center; }
+
+  .box {
+    background-color: #ecffe0;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    width: 15em;
+    height: 15em;
+    transition: all 1s linear; }
+    .box:hover {
+      background-color: #a0faff;
+      transition: all 1s linear;
+      width: 15em;
+      height: 15em;
+      font-family: "Arvo", serif;
+      font-weight: 600; } }
+@media (min-width: 1024px) {
+  #divv {
+    background-color: rgba(186, 196, 180, 0.6);
+    height: 150vh;
+    margin-left: 320px;
+    margin-top: 175px; }
+
+  header {
+    font-family: Helvetica;
+    top: 0px;
+    left: 0px;
+    position: fixed;
+    width: 20em;
+    height: 11em;
+    z-index: 2;
+    background-color: #a0faff; }
+
+  h4 {
+    font-family: Helvetica;
+    padding-left: 5px;
+    text-align: center;
+    margin-top: -0.6em;
+    padding-top: 0.3em;
+    margin-bottom: 0.5em;
+    width: 19.7em;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    line-height: 130%;
+    font-weight: 200;
+    border-top: double 3px black; }
+
+  h1 {
+    font-family: Helvetica;
+    text-align: center;
+    margin-top: 0.5em;
+    width: 13.1em;
+    padding-left: 7px;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    font-size: 150%;
+    font-weight: 200;
+    border-bottom: double 3px black; }
+
+  nav {
+    justify-content: flex-start;
+    -webkit-justify-content: flex-start; }
+
+  .box {
+    background-color: #ecffe0;
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    width: 15em;
+    height: 15em;
+    transition: all 1s linear; }
+    .box:hover {
+      background-color: #a0faff;
+      transition: all 1s linear;
+      width: 15em;
+      height: 15em;
+      font-family: "Arvo", serif;
+      font-weight: 600; } }
+
+/*# sourceMappingURL=main.css.map */
