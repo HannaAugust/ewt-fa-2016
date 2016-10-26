@@ -314,7 +314,7 @@ ul.exercise {
     display: -webkit-flex;
     flex-wrap: wrap;
     width: 15em;
-    height: 15em;
+    
     transition: all 1s linear; }
     .box:hover {
       background-color: #a0faff;
