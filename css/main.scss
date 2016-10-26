@@ -358,7 +358,7 @@ ul{
                 padding:1em;
                 margin:1em;
                 @include flexwrap;
-                @include square;
+                
                 @include transition2;
                
                 &:hover{
