@@ -19,21 +19,35 @@ class Greeting extends React.Component {
   constructor() {
     super();
     this.state = {
-      name: ""
+      name: "",
+      value:"",
+      hide:{visibility:'hidden'}
+      
     };
   }
 
  onKeyUp(event) {
-    this.setState({
-      name: event.input.value
-    });
+
+      if(event.target.valur === ""){
+        this.setState({
+          hide:{visibility:'hidden'}
+        })
+      }
+      else{
+        this.setState({
+          hide:{},
+          name:event.target.value
+        })
+      }
+ 
   }
 
   render() {
+  
     return (
       <div className="greeting" >
-          <input className="greeting__input" type="text" value={this.state.value} onKeyUp={this.onKeyUp}/>
-          <h2 className="greeting__message">Hello, {this.state.name}!</h2>
+          <input className="greeting__input" type="text"  onKeyUp={this.onKeyUp.bind(this)}/>
+          <h2 className="greeting__message" style = {this.state.hide} >Hello, {this.state.name}!</h2>
       </div>
     );
   }
@@ -41,18 +55,6 @@ class Greeting extends React.Component {
 
 ReactDOM.render(<Greeting/>, document.querySelector('.app'));
 
-
-      // 1. Create a <Greeting/> component which has a div with className of "greeting"
-      // 2. It's direct children include an <input/> element with type attribute as text and classname "greeting__input" and an <h2> with className "greeting__message" element that contains "Hello, {this.state.name}!" as its content.
-      //  <div className="greeting">
-      //    <input className="greeting__input" type="text"/>
-      //    <h2 className="greeting__message">Hello, {name}!</h2>
-      //  </div>
-      //
-      // 3. Add a "onKeyUp" event to the input field which updates the state to the 
-
-      // 4. Hide <h2/> when there is no name.
-      // 5. Use ReactDOM to render component to .app
     </script>
   </body>
 </html>
