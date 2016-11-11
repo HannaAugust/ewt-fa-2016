@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, width=device-width">
+    <title>React pt. 3 Homework</title>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="https://unpkg.com/react@latest/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@latest/dist/react-dom.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  </head>
+  <body>
+    <div class="app"></div>
+
+
+<script type="text/babel">
+
+class Artist extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  } 
+
+  componentWillMount(){
+     fetch(`https://api.discogs.com/artists/${this.props.id}/releases`)
+      .then(response => response.json().then(data => this.setState({data:data})));
+  }
+  render() {
+    console.log(this.state.data);
+    if (!this.state.data) {
+      return <div className="loader"/>;
+    }
+
+    return (
+      <ul>
+       
+      <h1 className="artist__name">
+        <a href="https://www.discogs.com/artist/${this.props.id}">{this.state.data.releases[0].artist}</a>
+      </h1>
+      
+        {this.state.data.releases.map((item, index) =>
+          <li key={index}>
+            <h2 className="artist__release">
+              <a href="https://www.discogs.com/{item.artist}{item.title}/master/{item.id}">{item.title}</a>
+            </h2>
+          </li>
+        )}
+      </ul>
+    );
+  }
+
+}
+
+ReactDOM.render(<Artist id="14602" />, document.querySelector('.app'));
+
+
+
+
+
+</script>
+  
+  </body>
+</html>
