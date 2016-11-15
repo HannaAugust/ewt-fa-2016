@@ -12,7 +12,12 @@
     <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
   </head>
   <body>
-    <div class="app"></div>
+  <div class="app">
+    <div id="app0"></div>
+    <div id="app1"></div>
+    <div id="app2"></div>
+    <div id="app3"></div>
+  </div>
 
 
 <script type="text/babel">
@@ -52,8 +57,13 @@ class Artist extends React.Component {
   }
 
 }
+var artist =[{id:"14602",container:"app0"},{id:"121308",container:"app1"},{id:"1067369",container:"app2"},{id:"307908",container:"app3"}];
 
-ReactDOM.render(<Artist id="14602" />, document.querySelector('.app'));
+
+for(var i = 0; i < artist.length; i++){
+  ReactDOM.render(<Artist id={artist[i].id} />, document.getElementById(artist[i].container));
+  }
+
 
 
 
