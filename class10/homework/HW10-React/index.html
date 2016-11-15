@@ -37,13 +37,13 @@ class Artist extends React.Component {
       <ul>
        
       <h1 className="artist__name">
-        <a href="https://www.discogs.com/artist/${this.props.id}">{this.state.data.releases[0].artist}</a>
+        <a href={`https://www.discogs.com/artist/${this.props.id}`}>{this.state.data.releases[0].artist}</a>
       </h1>
       
         {this.state.data.releases.map((item, index) =>
           <li key={index}>
             <h2 className="artist__release">
-              <a href="https://www.discogs.com/{item.artist}{item.title}/master/{item.id}">{item.title}</a>
+              <a href={`https://www.discogs.com/${this.props.id}/release/${item.id}`}>{item.title}</a>
             </h2>
           </li>
         )}
