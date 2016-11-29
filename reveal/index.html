@@ -8,7 +8,12 @@
         <div class="reveal">
             <div class="slides">
         <section data-transition="convex">
+<!--         https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/ 
+             https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
+             https://egghead.io/courses/getting-started-with-redux
+             http://redux.js.org/docs/introduction/ThreePrinciples.html
 
+-->
             <h1> Redux </h1>
             (brief draft)
             <p>Redux is a predictable state container for JavaScript apps.</p>
@@ -16,10 +21,6 @@
         </section>
         <section data-transition="convex">
             Three Principles
-<!--                 <li>Single source of truth</li>
-                <li>State is read-only</li>
-                <li>Changes are made with pure functions</li> -->
-            
             <section data-transition="convex" data-transition-speed="slow"><h3>Single source of truth</h3></section>
             <section data-transition="convex" data-transition-speed="slow"><h3>State is read-only</h3></section>
             <section data-transition="convex" data-transition-speed="slow"><h3>Changes are made with pure functions</h3></section>
@@ -27,7 +28,6 @@
 
         <section data-transition="convex">
         Benefits Of Redux
-
             <section data-transition="convex" data-transition-speed="slow"><h5>Predictability of outcome</h5>
                 <p>There is always one source of truth, the store, with no confusion about how to sync the current state with actions and other parts of the application.</p>
             </section>
@@ -50,12 +50,14 @@
                 <p>The first rule of writing testable code is to write small functions that do only one thing and that are independent. Redux’s code is mostly functions that are just that: small, pure and isolated.</p>
             </section>
         </section>
-        <section data-transition="convex">
 
-            <section data-transition="convex" data-transition-speed="slow"><p>Building Parts Of Redux:<h5>ACTIONS</h5></p>
+
+        <section data-transition="convex">
+            <section data-transition="convex" data-transition-speed="slow">Building Parts Of Redux:<h5>ACTIONS</h5>
                 <p>In a nutshell, actions are events. Actions send data from the application (user interactions, internal events such as API calls, and form submissions) to the store. The store gets information only from actions. Internal actions are simple JavaScript objects that have a 
                 <code>type</code> property (usually constant), describing the type of action and payload of information being sent to the store.</p>
-                    <pre><code>
+                    <pre>
+                    <code>
         {
             type: LOGIN_FORM_SUBMIT,
             payload: {username: ‘alex’, password: ‘123456’}
@@ -82,7 +84,9 @@
             </section>
             <section data-transition="convex" data-transition-speed="slow">Building Parts Of Redux:<h5>REDUCERS</h5>
                 <p>We’ve already discussed what a reducer is in functional JavaScript. It’s based on the array reduce method, where it accepts a callback (reducer) and lets you get a single value out of multiple values, sums of integers, or an accumulation of streams of values. In Redux, reducers are functions (pure) that take the current state of the application and an action and then return a new state. Understanding how reducers work is important because they perform most of the work. Here is a very simple reducer that takes the current state and an action as arguments and then returns the next state:</p>
-                    <pre><code>{
+                    <pre>
+                    <code>
+        {
         function handleAuth(state, action) {
             return _.assign({}, state, {
                 auth: action.payload
@@ -93,7 +97,8 @@
                 <p>For more complex apps, using the <code>combineReducers()</code>
                 utility provided by Redux is possible (indeed, recommended). It combines all of the reducers in the app into a single index reducer. Every reducer is responsible for its own part of the app’s state, and the state parameter is different for every reducer. The <code>combineReducers()</code> utility makes the file structure much easier to maintain.</p>
                 <p>If an object (state) changes only some values, Redux creates a new object, the values that didn’t change will refer to the old object and only new values will be created. That’s great for performance. To make it even more efficient you can add Immutable.js.</p>
-                    <pre><code>
+                    <pre>
+                    <code>
         const rootReducer = combineReducers({
             handleAuth: handleAuth,
             editProfile: editProfile,
@@ -104,16 +109,18 @@
             </section>
             <section data-transition="convex" data-transition-speed="slow">Building Parts Of Redux:<h5>STORE</h5>
                 <p>Store is the object that holds the application state and provides a few helper methods to access the state, dispatch actions and register listeners. The entire state is represented by a single store. Any action returns a new state via reducers. That makes Redux very simple and predictable.</p>
-                    <pre><code>{
+                    <pre>
+                    <code>
+        {
         import { createStore } from ‘redux’;
         let store = createStore(rootReducer);
         let authInfo = {username: ‘alex’, password: ‘123456’};
         store.dispatch(authUser(authInfo));
+        }
                     </code>
                     </pre>
             </section>
         </section>
-            
         <section data-transition="convex"><h4>Developer Tools, Time Travel And Hot Reloading</h4></section>
         <section data-transition="convex"><h4>Build App</h4> 
             <section data-transition="convex"><h6>1. USAGE AND REACT COMPONENT</h6></section>
@@ -123,8 +130,8 @@
             <section data-transition="convex"><h6>5. LOG IN AND OUT</h6></section>
         </section>
 
-                </div>            
-        </div>
+    </div>
+</div>
         <script src="reveal.js/js/reveal.js"></script>
         <script>
             Reveal.initialize();
