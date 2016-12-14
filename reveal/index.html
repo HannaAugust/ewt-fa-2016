@@ -7,128 +7,815 @@
     <body>
         <div class="reveal">
             <div class="slides">
-        <section data-transition="convex">
-<!--         https://www.smashingmagazine.com/2016/06/an-introduction-to-redux/ 
-             https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html
-             https://egghead.io/courses/getting-started-with-redux
-             http://redux.js.org/docs/introduction/ThreePrinciples.html
 
+<!--         
+https://github.com/buckyroberts/React-Redux-Boilerplate
+
+//to run webpack
+node_modules/webpack/lib/webpack.js
 -->
-            <h1> Redux </h1>
-            (brief draft)
-            <p>Redux is a predictable state container for JavaScript apps.</p>
-            <p>You can use Redux together with React, or with any other view library.</p>
-        </section>
-        <section data-transition="convex">
-            Three Principles
-            <section data-transition="convex" data-transition-speed="slow"><h3>Single source of truth</h3></section>
-            <section data-transition="convex" data-transition-speed="slow"><h3>State is read-only</h3></section>
-            <section data-transition="convex" data-transition-speed="slow"><h3>Changes are made with pure functions</h3></section>
-        </section>
 
-        <section data-transition="convex">
-        Benefits Of Redux
-            <section data-transition="convex" data-transition-speed="slow"><h5>Predictability of outcome</h5>
-                <p>There is always one source of truth, the store, with no confusion about how to sync the current state with actions and other parts of the application.</p>
-            </section>
-            <section data-transition="convex" data-transition-speed="slow"><h5>Maintainability</h5>
-                <p>Having a predictable outcome and strict structure makes the code easier to maintain.</p>
-            </section>
-            <section data-transition="convex" data-transition-speed="slow"><h5>Organization</h5>
-                <p>Redux is stricter about how code should be organized, which makes code more consistent and easier for a team to work with..</p>
-            </section>
-            <section data-transition="convex" data-transition-speed="slow"><h5>Server rendering</h5>
-                <p>This is very useful, especially for the initial render, making for a better user experience or search engine optimization. Just pass the store created on the server to the client side.</p>
-            </section>
-            <section data-transition="convex" data-transition-speed="slow"><h5>Developer tools</h5>
-                <p>Developers can track everything going on in the app in real time, from actions to state changes.</p>
-            </section>
-            <section data-transition="convex" data-transition-speed="slow"><h5>Community and ecosystem</h5>
-                <p>This is a huge plus whenever you’re learning or using any library or framework. Having a community behind Redux makes it even more appealing to use.</p>
-            </section>
-            <section data-transition="convex" data-transition-speed="slow"><h5>Ease of testing</h5>
-                <p>The first rule of writing testable code is to write small functions that do only one thing and that are independent. Redux’s code is mostly functions that are just that: small, pure and isolated.</p>
-            </section>
-        </section>
+<!-- ____________________________intro -->
+<section data-transition="convex">
+        <h1>Redux</h1>
+        <p>Redux is a predictable state container for JavaScript apps.</p>
+        <p>React — A JS library that helps us to divide up our app into multiple components but doesn’t clearly specify how to keep track of the data(aka State) and how to deal with all the events(aka Actions) properly.</p>
+        <p>Redux — A complimentary library to React that provides a way to easily keep the data(State) and the events(Actions).</p>
+</section>
+<!-- ____________________________why to use redux? -->
+<section data-transition="convex">
+    Benefits Of Redux
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>Predictability of outcome</h5>
+        <p>There is always one source of truth, the store, with no confusion about how to sync the current state with actions and other parts of the application.</p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>Maintainability</h5>
+        <p>Having a predictable outcome and strict structure makes the code easier to maintain.</p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>Organization</h5>
+        <p>Redux is stricter about how code should be organized, which makes code more consistent and easier for a team to work with..</p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>Server rendering</h5>
+        <p>This is very useful, especially for the initial render, making for a better user experience or search engine optimization. Just pass the store created on the server to the client side.</p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>Developer tools</h5>
+        <p>Developers can track everything going on in the app in real time, from actions to state changes.</p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>Ease of testing</h5>
+        <p>The first rule of writing testable code is to write small functions that do only one thing and that are independent. Redux’s code is mostly functions that are just that: small, pure and isolated.</p>
+    </section>
+</section>
 
+<!-- ____________________________main principles of redux -->
+<section data-transition="convex">
+    <section data-transition="convex" data-transition-speed="slow">
+        <h3>Three Principles</h3>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>Single source of truth</h5>
+        <p>When you use Redux, the underlying data for your entire application is represented by a single JavaScript object, referred to as the state or state tree. This object can be as simple or complex as your application demands. For example, the state for a simple todo app might be a single array of todo objects.</p>
+        <pre>
+            <code>
+const state = [
+    {
+        id: 1,
+        task: 'Do laundry',
+        completed: true
+    },
+    {
+        id: 2,
+        task: 'Paint fence',
+        completed: false
+    }
+];
+            </code>
+        </pre>
 
-        <section data-transition="convex">
-            <section data-transition="convex" data-transition-speed="slow">Building Parts Of Redux:<h5>ACTIONS</h5>
-                <p>In a nutshell, actions are events. Actions send data from the application (user interactions, internal events such as API calls, and form submissions) to the store. The store gets information only from actions. Internal actions are simple JavaScript objects that have a 
-                <code>type</code> property (usually constant), describing the type of action and payload of information being sent to the store.</p>
-                    <pre>
-                    <code>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>The state for a social media site might be a dictionary that contains information about posts, notifications, profile data, and other social data.</p>
+        <pre>
+            <code>
+const defaultState = {
+    posts: [
+        // post objects to appear in user's feed
+    ],
+    notifications: [
+        // unread notifications for the user
+    ],
+    messages: [
+        // new messages
+    ],
+    friends: [
+        // other online users
+    ],
+    profile: null
+}
+            </code>
+        </pre>
+                
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>State is read-only</h5>
+        <p>The only way to change the state is to emit an action, an object describing what happened.</p>
+        <p>The presentation layer will never directly manipulate the state of your app. For example, the submit handler on the add-todo form wouldn't directly push a new task onto your todos array. Instead, that handler would emit an action that tells the application to add task todos array </p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>This ensures that neither the views nor the network callbacks will ever write directly to the state. Instead, they express an intent to transform the state.</p>
+        <pre>
+            <code>
+store.dispatch({
+  type: 'COMPLETE_TODO',
+  index: 1
+})
+
+store.dispatch({
+  type: 'SET_VISIBILITY_FILTER',
+  filter: 'SHOW_COMPLETED'
+})
+            </code>
+         </pre>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>Changes are made with pure functions</h5>
+        <p>So, what happens to the actions once they're emitted by the UI? There is a single function that listens for these actions. It's basically a big switch statement that hinges on the action type field. Each action type that can be emitted in your app needs a case that calculates the new app state based on the current state and the data in the action. This function must be pure!</p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>To specify how the state tree is transformed by actions, you write pure reducers.</p>
+        <pre>
+            <code>
+function todos(state = [], action) {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [
+        ...state,
         {
-            type: LOGIN_FORM_SUBMIT,
-            payload: {username: ‘alex’, password: ‘123456’}
+          text: action.text,
+          completed: false
         }
-                    </code>
-                    </pre>
-                <p>Actions are created with action creators. That sounds obvious, I know. They are just functions that return actions.</p>
-                    <pre>
-                    <code>
-        function authUser(form) {
-            return {
-                type: LOGIN_FORM_SUBMIT,
-                payload: form
-            }
+      ]
+    case 'COMPLETE_TODO':
+      return state.map((todo, index) => {
+        if (index === action.index) {
+          return Object.assign({}, todo, {
+            completed: true
+          })
         }
-                    </code>
-                    </pre>
-                <p>Calling actions anywhere in the app, then, is very easy. Use the dispatch method, like so:</p>
-                    <pre>
-                    <code>
-        dispatch(authUser(form));
-                    </code>
-                    </pre>
-            </section>
-            <section data-transition="convex" data-transition-speed="slow">Building Parts Of Redux:<h5>REDUCERS</h5>
-                <p>We’ve already discussed what a reducer is in functional JavaScript. It’s based on the array reduce method, where it accepts a callback (reducer) and lets you get a single value out of multiple values, sums of integers, or an accumulation of streams of values. In Redux, reducers are functions (pure) that take the current state of the application and an action and then return a new state. Understanding how reducers work is important because they perform most of the work. Here is a very simple reducer that takes the current state and an action as arguments and then returns the next state:</p>
-                    <pre>
-                    <code>
-        {
-        function handleAuth(state, action) {
-            return _.assign({}, state, {
-                auth: action.payload
-            });
-        }
-                    </code>
-                    </pre>
-                <p>For more complex apps, using the <code>combineReducers()</code>
-                utility provided by Redux is possible (indeed, recommended). It combines all of the reducers in the app into a single index reducer. Every reducer is responsible for its own part of the app’s state, and the state parameter is different for every reducer. The <code>combineReducers()</code> utility makes the file structure much easier to maintain.</p>
-                <p>If an object (state) changes only some values, Redux creates a new object, the values that didn’t change will refer to the old object and only new values will be created. That’s great for performance. To make it even more efficient you can add Immutable.js.</p>
-                    <pre>
-                    <code>
-        const rootReducer = combineReducers({
-            handleAuth: handleAuth,
-            editProfile: editProfile,
-            changePassword: changePassword
+        return todo
+      })
+    default:
+      return state
+  }
+}
+
+import { combineReducers, createStore } from 'redux'
+let reducer = combineReducers({ visibilityFilter, todos })
+let store = createStore(reducer)
+            </code>            
+        </pre>
+    </section>
+</section>
+
+
+
+
+<!-- ____________________________Main features of redux -->       
+<section data-transition="convex">
+    <h2>Main Parts Of Redux</h2>
+</section>
+
+<section data-transition="convex">
+        <h5>ACTIONS</h5>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>An action is a simple JavaScript object that expresses an intent to mutate the state object. It contains the minimal information needed to describe what should change as a result of the user interaction. Actions send data from the application (user interactions, internal events such as API calls, and form submissions) to the store. The store gets information only from actions. Actions have a <code>type</code> property (usually constant), describing the type of action and payload of information being sent to the store.</p>
+        <pre>
+            <code>
+{
+    type: LOGIN_FORM_SUBMIT,
+    payload: {username: ‘alex’, password: ‘123456’}
+}
+            </code>
+        </pre>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p> Action creators are functions that create objects, actions are the objects that get created and returned. All actions are automatically sent to **all** reducers. It is the reducers job to determine how to handle that action.</p>
+        <pre>
+            <code>
+function authUser(form) {
+    return {
+        type: LOGIN_FORM_SUBMIT,
+        payload: form
+    }
+}
+            </code>
+        </pre>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>Calling actions anywhere in the app, then, is very easy. Use the dispatch method, like so:</p>
+        <pre>
+            <code>
+dispatch(authUser(form));
+            </code>
+        </pre>
+    </section>
+</section>
+
+
+<section data-transition="convex" data-transition-speed="slow">
+        <h5>REDUCERS</h5>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>Reducer based on the array reduce method, where it accepts a callback (reducer) and lets you get a single value out of multiple values, sums of integers, or an accumulation of streams of values. In Redux, reducers are functions (pure) that take the current state of the application and an action and then return a new state. Understanding how reducers work is important because they perform most of the work. Here is a very simple reducer that takes the current state and an action as arguments and then returns the next state:</p>
+        <pre>
+            <code>
+{
+    function handleAuth(state, action) {
+        return _.assign({}, state, {
+            auth: action.payload
         });
-                    </code>
-                    </pre>
-            </section>
-            <section data-transition="convex" data-transition-speed="slow">Building Parts Of Redux:<h5>STORE</h5>
-                <p>Store is the object that holds the application state and provides a few helper methods to access the state, dispatch actions and register listeners. The entire state is represented by a single store. Any action returns a new state via reducers. That makes Redux very simple and predictable.</p>
-                    <pre>
-                    <code>
-        {
-        import { createStore } from ‘redux’;
-        let store = createStore(rootReducer);
-        let authInfo = {username: ‘alex’, password: ‘123456’};
-        store.dispatch(authUser(authInfo));
+}
+            </code>
+        </pre>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>For more complex apps, using the <code>combineReducers()</code>utility provided by Redux is possible (indeed, recommended). It combines all of the reducers in the app into a single index reducer. Every reducer is responsible for its own part of the app’s state, and the state parameter is different for every reducer. The <code>combineReducers()</code> utility makes the file structure much easier to maintain.</p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>If an object (state) changes only some values, Redux creates a new object, the values that didn’t change will refer to the old object and only new values will be created. That’s great for performance.</p>
+        <pre>
+            <code>
+const rootReducer = combineReducers({
+    handleAuth: handleAuth,
+    editProfile: editProfile,
+    changePassword: changePassword
+});
+            </code>
+        </pre>
+    </section>
+ </section>
+
+<section data-transition="convex" data-transition-speed="slow">
+        <h5>STORE</h5>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>Store is the object that holds the application state and provides a few helper methods to access the state, dispatch actions and register listeners. The entire state is represented by a single store. Any action returns a new state via reducers. That makes Redux very simple and predictable.</p>
+        <pre>
+            <code>
+{
+    import { createStore } from ‘redux’;
+    let store = createStore(rootReducer);
+    let authInfo = {username: ‘alex’, password: ‘123456’};
+    store.dispatch(authUser(authInfo));
+}
+            </code>
+        </pre>
+    </section>
+</section>
+
+
+
+
+
+
+
+
+
+
+<section data-transition="convex">
+    <h2>Building Simple App with React and Redux</h2>
+</section>
+
+
+<section data-transition="convex">
+    <section data-transition="convex"><h4>Basic setup</h4> 
+        <p>The whole state of your app is stored in an object tree inside a single store.
+        The only way to change the state tree is to emit an action, an object describing what happened.
+        To specify how the actions transform the state tree, you write pure reducers.</p>
+    </section>
+
+    <section data-transition="convex"><h4>Filetree structure</h4> 
+        <pre>
+        <code>
++--dev
+|    +-- js
+|       +-- actions
+|           +-- index.js
+|       +-- components
+|           +-- App.js
+|           +-- Footer.js
+|           +-- Link.js
+|           +-- Todo.js
+|           +-- TodoList.js
+|       +-- containers
+|           +-- AddTodo.js
+|           +-- FilterLink.js
+|           +-- VisibleTodoList.js
+|       +-- reducers
+|           +-- index.js
+|           +-- todos.js
+|           +-- visibilityFilter.js
+|       +-- index.js
+
+
++-- src
+|   +-- index.html
+        </code>
+        </pre>
+
+    </section>
+
+<!--  ________________________________________________DESIGN_______________________________________  -->  
+    <section data-transition="convex" data-transition-speed="slow"><h5>First Step :: Basic Design</h5>
+                <p>To begin organizing parts of the appplication it is important to scketch basic layout including all visuals and data</p>
+                <p>In this example the application will have three basic components: AddTodo, TodoList, and Filter. Each component holds main "purpose".</p>
+     </section>
+</section>
+
+<!-- ___________________________________________ACTIONS and ActionsCreators______________________________ -->
+<section data-transition="convex">
+    <section data-transition="convex" data-transition-speed="slow">
+        <h5>List State and Actions for each Component</h5>
+        <p>Create Action creaters for each component in the folder "actions/index.js"</p>
+    </section>
+    <section data-transition="convex" data-transition-speed="slow">
+        <p>1. Takes the text from AddTodo field and returns proper “Action” JSON to send to other components.</p>
+        <pre>
+            <code>
+let nextTodoId = 0
+
+export const addTodo = (text) => {
+ return {
+ type: ‘ADD_TODO’,
+ id: nextTodoId++,
+ text,  //<--ES6. same as text:text, in ES5
+ completed: false //<-- initially this is set to false
+ }
+}
+            </code>
+        </pre>
+     </section>
+     <section data-transition="convex" data-transition-speed="slow">
+        <p>2. Takes filter string and returns proper “Action” JSON object to send to other components.</p>
+        <pre>
+            <code>
+
+export const setVisibilityFilter = (filter) => {
+  return {
+    type: 'SET_VISIBILITY_FILTER',
+    filter
+  }
+}
+            </code>
+        </pre>
+     </section>
+     <section data-transition="convex" data-transition-speed="slow">
+     <p>3. Takes Todo item’s id and returns proper “Action” JSON object to send to other components.</p>
+        <pre>
+            <code>
+
+export const toggleTodo = (id) => {
+  return {
+    type: 'TOGGLE_TODO',
+    id
+  }
+}
+            </code>
+        </pre>
+     </section>
+</section>
+
+<!-- ____________________________________________REDUCERS______________________________________________ -->
+<section data-transition="convex">
+    <section data-transition="convex"><h4>Reducers</h4>
+        <p>Reducers are functions that take “state” from Redux and “action” JSON object and returns a new “state” to be stored back in Redux.</p>
+        <p>1. Reducer functions are called by the “Container” containers when there is a user action.</p>
+        <p>2. If the reducer changes the state, Redux passes the new state to each component and React re-renders each component.</p> 
+    </section>
+    <section data-transition="convex">
+        <p>Write Reducers For Each Action</p>
+        <pre>
+            <h3>reducers/visibilityFilter.js</h3>
+            <code>
+const visibilityFilter = (state = 'SHOW_ALL', action) => {
+  switch (action.type) {
+    case 'SET_VISIBILITY_FILTER':
+      return action.filter
+    default:
+      return state
+  }
+}
+
+export default visibilityFilter
+            </code>
+        </pre>        
+    </section>
+    <section data-transition="convex">
+        <pre>
+            <h3>reducers/todos.js</h3>
+            <code>
+const todo = (state = {}, action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return {
+        id: action.id,
+        text: action.text,
+        completed: false
+      }
+    case 'TOGGLE_TODO':
+      if (state.id !== action.id) {
+        return state
+      }
+
+      return Object.assign({}, state, {
+        completed: !state.completed
+      })
+
+    default:
+      return state
+  }
+}
+
+const todos = (state = [], action) => {
+  switch (action.type) {
+    case 'ADD_TODO':
+      return [
+        ...state,
+        todo(undefined, action)
+      ]
+    case 'TOGGLE_TODO':
+      return state.map(t =>
+        todo(t, action)
+      )
+    default:
+      return state
+  }
+}
+
+export default todos
+            </code>
+        </pre>          
+    </section>
+    <section data-transition="convex">
+        <p>To combine reducers in one index file we need to import them from previously creates files</p> 
+       <pre>
+            <h3>reducers/index.js</h3>
+            <code>
+import { combineReducers } from 'redux'
+import todos from './todos'
+import visibilityFilter from './visibilityFilter'
+
+const todoApp = combineReducers({
+  todos,
+  visibilityFilter
+})
+
+export default todoApp
+            </code>
+        </pre>       
+    </section>
+</section>
+
+
+
+
+
+<!-- ____________________________________________COMPONENTS________________________________________ -->
+<section data-transition="convex">
+        <h4>“Presentational” and “Container” Components</h4>
+        <p>Keeping React and Redux logic inside each component can make it messy, so Redux recommends creating a dummy presentation only component called “Presentational” component and a parent wrapper component called “Container” component that deals w/ Redux, dispatch “Actions” and more. </p>
+        <p>The parent Container then passes the data to the presentational component, handle events, deal with React on behalf of Presentational component.</p>
+</section>
+<section data-transition="convex">
+    <p>Containers are very similar to components, the only difference is that containers are aware of application state. If
+    part of your webpage is only used for displaying data (dumb) then make it a component. If you need it to be smart and
+    aware of the state (whenever data changes) in the application then make it a container.</p>
+    <p>Containers fetch state data and use it to render (display) components. - state data will become components props</p>
+    <p>Containers are similar to components. However, only containers have access to state data in Redux. - components are sometimes called "dumb components" or "presentational components"</p>
+</section>
+
+
+<!-- ____________________________________PRESENTATIONAL COMPONENTS_____________________________ -->
+
+<section data-transition="convex">
+    <section data-transition="convex">
+        <h4>Implement Every Presentational Components</h4>
+    </section>
+
+    <section data-transition="convex">
+        <pre>
+            <h3>components/Todo.js</h3>
+            <code>
+{
+import React, { PropTypes } from 'react'
+
+const Todo = ({ onClick, completed, text }) => (
+  &lt;li 
+    onClick={onClick}
+    style={{
+      textDecoration: completed ? 'line-through' : 'none'
+    }}
+  >
+    {text}
+  &lt;/li&gt;
+)
+
+Todo.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  completed: PropTypes.bool.isRequired,
+  text: PropTypes.string.isRequired
+}
+
+export default Todo
+}
+            </code>
+        </pre>
+    </section>
+
+
+
+    <section data-transition="convex">
+        <pre>
+            <h3>components/TodoList.js</h3>
+            <code>
+{
+import React, { PropTypes } from 'react'
+import Todo from './Todo'
+
+const TodoList = ({ todos, onTodoClick }) => (
+  &lt;ul>
+    {todos.map(todo =>
+      &lt;Todo
+        key={todo.id}
+        {...todo}
+        onClick={() => onTodoClick(todo.id)}
+      />
+    )}
+  &lt;/ul>
+)
+
+TodoList.propTypes = {
+  todos: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    completed: PropTypes.bool.isRequired,
+    text: PropTypes.string.isRequired
+  }).isRequired).isRequired,
+  onTodoClick: PropTypes.func.isRequired
+}
+
+export default TodoList
+}
+            </code>
+         </pre>                
+    </section>
+
+
+
+    <section data-transition="convex">
+        <pre>
+            <h3>components/Link.js</h3>
+            <code>
+{
+import React, { PropTypes } from 'react'
+
+const Link = ({ active, children, onClick }) => {
+  if (active) {
+    return &lt;span>{children}&lt;/span>
+  }
+
+  return (
+    &lt;a href="#"
+       onClick={e => {
+         e.preventDefault()
+         onClick()
+       }}
+    >
+      {children}
+    &lt;/a>
+  )
+}
+
+Link.propTypes = {
+  active: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
+  onClick: PropTypes.func.isRequired
+}
+
+export default Link
+}
+            </code>
+        </pre>        
+    </section>
+
+
+    <section data-transition="convex">
+        <pre>
+            <h3>components/Footer.js</h3>
+            <code>
+{
+import React from 'react'
+import FilterLink from '../containers/FilterLink'
+
+const Footer = () => (
+  &lt;p>
+    Show:
+    {" "}
+    &lt;FilterLink filter="SHOW_ALL">
+      All
+    &lt;/FilterLink>
+    {", "}
+    &lt;FilterLink filter="SHOW_ACTIVE">
+      Active
+    &lt;/FilterLink>
+    {", "}
+    &lt;FilterLink filter="SHOW_COMPLETED">
+      Completed
+    &lt;/FilterLink>
+  &lt;/p>
+)
+
+export default Footer
+}
+            </code>
+        </pre>        
+    </section>
+
+
+
+    <section data-transition="convex">
+        <pre>
+            <h3>components/App.js</h3>
+            <code>
+{
+import React from 'react'
+import Footer from './Footer'
+import AddTodo from '../containers/AddTodo'
+import VisibleTodoList from '../containers/VisibleTodoList'
+
+const App = () => (
+  &lt;div>
+    &lt;AddTodo />
+    &lt;VisibleTodoList />
+    &lt;Footer />
+  &lt;/div>
+)
+
+export default App
+}
+            </code>
+        </pre>        
+    </section>
+</section>
+
+
+
+<!-- _______________________________________CONTAINER COMPONENTS____________________________ -->
+
+<section data-transition="convex">
+    <section data-transition="convex">
+        <h4>Container Components</h4>
+    </section>
+
+    <section data-transition="convex">
+        <pre>
+            <h3>containers/VisibleTodoList.js</h3>
+            <code>
+import { connect } from 'react-redux'
+import { toggleTodo } from '../actions'
+import TodoList from '../components/TodoList'
+
+const getVisibleTodos = (todos, filter) => {
+  switch (filter) {
+    case 'SHOW_ALL':
+      return todos
+    case 'SHOW_COMPLETED':
+      return todos.filter(t => t.completed)
+    case 'SHOW_ACTIVE':
+      return todos.filter(t => !t.completed)
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onTodoClick: (id) => {
+      dispatch(toggleTodo(id))
+    }
+  }
+}
+
+const VisibleTodoList = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList)
+
+export default VisibleTodoList
+            </code>
+        </pre>    
+    </section>
+
+    <section data-transition="convex">
+        <pre>
+            <h3>containers/FilterLink.js</h3>
+            <code>
+import { connect } from 'react-redux'
+import { setVisibilityFilter } from '../actions'
+import Link from '../components/Link'
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    active: ownProps.filter === state.visibilityFilter
+  }
+}
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onClick: () => {
+      dispatch(setVisibilityFilter(ownProps.filter))
+    }
+  }
+}
+
+const FilterLink = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Link)
+
+export default FilterLink
+            </code>
+        </pre>    
+    </section>
+
+    <section data-transition="convex">
+        <pre>
+            <h3>containers/AddTodo.js</h3>
+            <code>
+import React from 'react'
+import { connect } from 'react-redux'
+import { addTodo } from '../actions'
+
+let AddTodo = ({ dispatch }) => {
+  let input
+
+  return (
+    &lt;div>
+      &lt;form onSubmit={e => {
+        e.preventDefault()
+        if (!input.value.trim()) {
+          return
         }
-                    </code>
-                    </pre>
-            </section>
-        </section>
-        <section data-transition="convex"><h4>Developer Tools, Time Travel And Hot Reloading</h4></section>
-        <section data-transition="convex"><h4>Build App</h4> 
-            <section data-transition="convex"><h6>1. USAGE AND REACT COMPONENT</h6></section>
-            <section data-transition="convex"><h6>2. EVENTS AND ACTIONS</h6></section>
-            <section data-transition="convex"><h6>3. REDUCERS</h6></section>
-            <section data-transition="convex"><h6>4. DISPLAYING THE CURRENT STATE</h6></section>
-            <section data-transition="convex"><h6>5. LOG IN AND OUT</h6></section>
-        </section>
+        dispatch(addTodo(input.value))
+        input.value = ''
+      }}>
+        &lt;input ref={node => {
+          input = node
+        }} />
+        &lt;button type="submit">
+          Add Todo
+        &lt;/button>
+      &lt;/form>
+    &lt;div>
+  )
+}
+AddTodo = connect()(AddTodo)
+
+export default AddTodo
+            </code>
+         </pre>    
+    </section>
+</section>
+
+
+<!-- ____________________________BRING ALL COMPONENTS AND PARTS OF APP TOGETHER_______________ -->
+
+    <section data-transition="convex">
+        <h4>Bring Components Together</h4>
+        <p>At first< we will create renderer that will bind React and Redux and render components into the page through modifying main js file "index.js"</p>
+        <pre>
+            <h3>index.js</h3>
+            <code>
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { createStore } from 'redux'
+import todoApp from './reducers'
+import App from './components/App'
+
+let store = createStore(todoApp)
+
+render(
+  &lt;Provider store={store}>
+    &lt;App />
+  &lt;/Provider>,
+  document.getElementById('root')
+)
+            </code>
+        </pre>
+
+    </section>
+<section data-transition="convex">
+<h5>Reference</h5>
+<a href="https://teropa.info/blog/2015/09/10/full-stack-redux-tutorial.html#introducing-actions-and-reducers">Full-Stack Redux Tutorial</a>
+<br>
+<a href="https://egghead.io/courses/getting-started-with-redux">Get Started with Redux</a>
+<br>
+<a href="http://www.jchapron.com/2015/08/14/getting-started-with-redux/">Getting Started with Redux</a>
+<br>
+<a href="https://scotch.io/bar-talk/getting-started-with-redux-an-intro">Getting Started with Redux: Intro</a>
+<br>
+<br>
+<h5>Boilerplate Used</h5>
+<a href="https://github.com/buckyroberts/React-Redux-Boilerplate">Simple Redux Boilerplate</a>
+</section>
+
+
 
     </div>
 </div>
@@ -138,3 +825,4 @@
         </script>
     </body>
 </html>
+
